@@ -1,0 +1,26 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            
+            {
+                // "useBuiltIns": "usage",//动态引入polyfill
+                // "corejs": 3
+            }
+        ],
+        ["@babel/preset-react"]
+    ],
+    "plugins": [
+        ["react-hot-loader/babel"],
+        ["@babel/plugin-transform-runtime",{
+                "corejs": 3
+        }],
+        ["@babel/plugin-syntax-dynamic-import"],
+        ["@babel/plugin-proposal-decorators", {
+            "legacy": true
+        }],
+        ["@babel/plugin-proposal-class-properties", {
+            "loose": true
+        }]
+    ]
+}
