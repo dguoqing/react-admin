@@ -16,14 +16,15 @@ const Login: React.FC = (props: any) => {
     const login = (e: React.FormEvent): void => {
         e.preventDefault();
         console.log(props)
-
+        const {location} = props
+        let toPath:string = location?.state?.from?.pathname || '/app'
         loginForm.validateFields().then(async (values: any) => {
             console.log(values)
             const result: any = await post({ url: '/login', toast: true }, values)
                 if (result.flg) {
                     cookie.set('username', result.username)
                     setTimeout(() => {
-                        props.history.push('/user')
+                        props.history.push(toPath)
                     }, 500)
                 }
         }).catch((err: any) => {

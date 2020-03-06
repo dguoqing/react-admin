@@ -9,6 +9,10 @@ import * as React from 'react'
 
 const Home = (props:any) => {
     console.log(props)
-    return <div>Home</div>
+    return <div>Homep
+        <div>
+            {props.routes}
+        </div>
+    </div>
 }
 export default Home

@@ -1,5 +1,5 @@
 {
-  "name": "webpack-demo",
+  "name": "react-admin",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,7 @@
     "dev-server": "concurrently \"npm run dev\" \"npm run devServer\""
   },
   
-  "homepage": "https://dguoqing.github.io/webpack-demo",
+  "homepage": "https://dguoqing.github.io/react-admin",
   "author": "",
   "license": "ISC",
   "devDependencies": {

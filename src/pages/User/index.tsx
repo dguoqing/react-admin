@@ -15,17 +15,17 @@ class User extends React.Component<any> {
         this.state = {
             menu: [
                 {
-                    linkTo: '/user',
+                    linkTo: '/app/user',
                     activeClass: 'active',
                     text: '个人信息'
                 },
                 {
-                    linkTo: '/user/loginlogs',
+                    linkTo: '/app/user/loginlogs',
                     activeClass: 'active',
                     text: '登录日志'
                 },
                 {
-                    linkTo: '/user/notification',
+                    linkTo: '/app/user/notification',
                     activeClass: 'active',
                     text: '通知中心'
                 }

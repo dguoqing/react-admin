@@ -28,9 +28,9 @@ hot(Router)
 const render = (Router: any) => {
     ReactDOM.render(
         <Provider store={store()}>
-            <HashRouter>
+            <BrowserRouter>
                 <Router />
-            </HashRouter>
+            </BrowserRouter>
         </Provider>
         ,
         document.getElementById('root') as HTMLElement)

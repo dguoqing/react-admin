@@ -13,11 +13,13 @@ interface Flg {
     flg: boolean
 }
 
-const Head: React.FC = () => {
+const Head: React.FC = (props:any) => {
+    console.log(props)
     console.log(cookie.get('username'))
     const [state, setState] = useState(false)
     const history = useHistory()
-    const logOut = async () => {
+    const logOut = async (e:any) => {
+        e.preventDefault()
         const { flg }: any = await get({ url: '/logout', toast: true })
         if (flg) {
             cookie.remove('username')
@@ -36,13 +38,13 @@ const Head: React.FC = () => {
             <div className='header-left fl'>
                 <ul className='header-nav'>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/app/home">Home</Link>
                     </li>
                     <li>
                         <Link to="/login">login</Link>
                     </li>
                     <li>
-                        <Link to="/user">user</Link>
+                        <Link to="/app/user">user</Link>
                     </li>
                     <li>
                         <Link to="/test">Test</Link>
@@ -65,7 +67,7 @@ const Head: React.FC = () => {
                                     <Link to="/user">个人中心</Link>
                                 </li>
                                 <li>
-                                    <a onClick={logOut} href="javascript:void(0);">退出</a>
+                                    <a onClick={logOut} href=":;">退出</a>
                                 </li>
                             </ul>
                         </div>

@@ -13,7 +13,7 @@ import HooksTest from './HooksTest'
 import '../assets/style/header.less'
 import '../assets/style/app.less'
 
-const { Content } = Layout
+const { Content, Sider } = Layout
 
 
 
@@ -44,24 +44,21 @@ const { Content } = Layout
 //     }
 // }
 const App: React.FC = (props: any) => {
-
+    console.log(props.routes)
     return (
-        <div className='main'>
+        <div className='main' >
             <Layout>
-
-                <Header />
-                <div className='app-content'>
+                <Sider><div style={{ color: 'red', height: document.documentElement.clientHeight + 'px' }}>是的公司答复</div></Sider>
+                <Layout style={{ color: 'red', height: document.documentElement.clientHeight + 'px' }}>
+                    <Header />
                     <Content>
                         <div style={{ height: '100%', width: '100%', textAlign: 'center' }}>
                             {props.routes}
                         </div>
                     </Content>
                     <HooksTest />
-                </div>
-
-
-
-                <Footer />
+                    <Footer />
+                </Layout>
 
             </Layout>
         </div>
