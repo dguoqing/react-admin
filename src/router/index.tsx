@@ -16,12 +16,12 @@ const fmtRoutes = (Routes:Array<any>) => {
             <Switch>
                 {Routes.map((route) => {
                     const {component,...rest} = route
-                    console.log(route)
+                    // console.log(route)
                     // if(!cookie.get('username')){
                     //     return <Redirect to={{}} />
                     // }
                     return <Route {...rest} render={props => {
-                        console.log(props)
+                        // console.log(props)
                         if(route.auth && !cookie.get('username')){
                             return <Redirect to={{
                                 pathname: "/login",

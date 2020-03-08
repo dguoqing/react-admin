@@ -14,7 +14,7 @@ const { SubMenu, Item } = Menu
 
 interface MenuObj {
     title: string,
-    linkTo?: string,
+    linkTo: string,
     children?: MenuObj[],
     icon?: any,
 }
@@ -26,41 +26,50 @@ const MenuList: MenuObj[] = [
     },
     {
         title: '产品管理',
-        linkTo: '',
         icon: <AppstoreOutlined />,
+        linkTo: '/app/productOne',
         children: [
             {
                 title: '产品一',
+                linkTo: '/app/productOne',
 
             },
             {
                 title: '产品二',
+                linkTo: '/app/productTwo',
 
             },
             {
                 title: '产品三',
+                linkTo: '',
                 children: [
                     {
-                        title: '产品三-1'
+                        title: '产品三-1',
+                        linkTo: '/app/productThree',
                     },
                     {
-                        title: '产品三-2'
+                        title: '产品三-2',
+                        linkTo: '/app/productThree/productThree2',
                     },
                     {
-                        title: '产品三-3'
+                        title: '产品三-3',
+                        linkTo: '/app/productThree/productThree3',
                     },
                 ]
             },
         ]
     },
     {
-        title: '系统管理'
+        title: '系统管理',
+        linkTo: '/app/home',
     },
     {
-        title: '用户管理'
+        title: '用户管理',
+        linkTo: '/app/user',
     },
     {
-        title: '菜单管理'
+        title: '菜单管理',
+        linkTo: '/app/menuManage',
     },
 ]
 
@@ -81,8 +90,10 @@ const renderMenu = (menuList: MenuObj[]) => {
             </SubMenu>
             :
             <Item key={menu.title}>
-                <VideoCameraOutlined />
-                <span>{menu.linkTo ? <Link to={menu.linkTo}>{menu.title}</Link> : menu.title}</span>
+                <Link to={menu.linkTo}>
+                    <VideoCameraOutlined />
+                    <span>{menu.title}</span>
+                </Link>
             </Item>
     })
 }

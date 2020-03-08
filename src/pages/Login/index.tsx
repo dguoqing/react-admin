@@ -18,7 +18,7 @@ const Login: React.FC = (props: any) => {
         e.preventDefault();
         console.log(props)
         const {location} = props
-        let toPath:string = location?.state?.from?.pathname || '/app'
+        let toPath:string = location?.state?.from?.pathname || '/app/home'
         loginForm.validateFields().then(async (values: any) => {
             console.log(values)
             const result: any = await post({ url: '/login', toast: true }, values)

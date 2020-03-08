@@ -11,7 +11,6 @@
     "server": "nodemon node server.js",
     "dev-server": "concurrently \"npm run dev\" \"npm run devServer\""
   },
-  
   "homepage": "https://dguoqing.github.io/react-admin",
   "author": "",
   "license": "ISC",
@@ -86,6 +85,7 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "ws": "^7.2.1"
   }
 }

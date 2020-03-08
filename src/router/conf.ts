@@ -20,6 +20,16 @@ const Notifications = Lazy('User/Notifications/Notifications')
 const UserInfo = Lazy('User/UserInfo/UserInfo')
 const NotFound = Lazy('NotFound/NotFound')
 
+//test
+
+const ProductOne = Lazy('Product/ProductOne');
+const ProductTwo = Lazy('Product/ProductTwo');
+const PruductThree = Lazy('Product/PruductThree/PruductThree');
+const PruductThree1 = Lazy('Product/PruductThree/PruductThree1');
+const PruductThree2 = Lazy('Product/PruductThree/PruductThree2');
+const PruductThree3 = Lazy('Product/PruductThree/PruductThree3');
+const MenuManage = Lazy('MenuManage/MenuManage');
+
 
 const routes = [
     {
@@ -51,7 +61,7 @@ const routes = [
                 path: '/app/user',
                 component: User,
                 key: 'User',
-                // exact: true,
+                exact: true,
                 auth: true,
                 routes: [
                     {
@@ -76,6 +86,58 @@ const routes = [
                         auth: true,
                     },
                 ]
+            },
+            //test
+            {
+                path: '/app/productOne',
+                component: ProductOne,
+                key: 'ProductOne',
+                exact: true,
+
+            },
+            {
+                path: '/app/productTwo',
+                component: ProductTwo,
+                key: 'ProductTwo',
+                exact: true,
+
+            },
+            {
+                path: '/app/productThree',
+                component: PruductThree,
+                key: 'PruductThree',
+                // exact: true,
+                routes:[
+                    {
+                        path: '/app/productThree',
+                        component: PruductThree1,
+                        key: 'PruductThree1',
+                        exact: true,
+
+                    },
+                    {
+                        path: '/app/productThree/productThree2',
+                        component: PruductThree2,
+                        key: 'PruductThree2',
+                        exact: true,
+
+                    },
+                    {
+                        path: '/app/productThree/productThree3',
+                        component: PruductThree3,
+                        key: 'PruductThree3',
+                        exact: true,
+
+                    },
+                ]
+
+            },
+            {
+                path: '/app/menuManage',
+                component: MenuManage,
+                key: 'MenuManage',
+                exact: true,
+
             },
         ]
     },

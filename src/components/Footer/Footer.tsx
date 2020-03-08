@@ -12,7 +12,6 @@ class Foot extends React.Component<any>{
         super(props)
     }
     render() {
-        console.log(this.props)
         return <Footer >
             <footer>
                 React-Admin ©{moment().format('YYYY')} Created by 865470087@qq.com  <span style={{color:'#09f'}}>footer:{this.props.count}</span>

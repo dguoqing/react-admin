@@ -1,18 +1,34 @@
 import * as React from 'react'
+import { useEffect, useState } from 'react'
 
-// class Home extends React.Component<Object>{
 
-//     render(){
-//         return <div>Home</div>
-//     }
-// }
+const Home = (props: any) => {
+    const [socketMessage, setSocketMessage] = useState('')
+    const createWebSocket = () => {
+        const ws: any = new WebSocket('ws://localhost:9999')
 
-const Home = (props:any) => {
-    console.log(props)
-    return <div>Homep
-        <div>
-            {props.routes}
-        </div>
+        ws.onopen = () => {
+            ws.send('hello server')
+        }
+
+        ws.onmessage = (res: MessageEvent) => {
+            console.log('MessageEvent', res)
+            setSocketMessage(res.data)
+        }
+        return ws
+    }
+    useEffect(() => {
+        // const ws = createWebSocket()
+
+        return () => {
+            // ws.send('guanbi')
+            // ws.close()
+        }
+    }, [])
+
+    return <div>
+        Homep
+            <p>{socketMessage}</p>
     </div>
 }
 export default Home
