@@ -33,53 +33,53 @@ const MenuManage = Lazy('MenuManage/MenuManage');
 
 const routes = [
     {
-        path: '/',
+        path: ROOTPATH + '/',
         component: App,
         exact: true,
         key: 'app1'
     },
     {
-        path: '/app',
+        path: ROOTPATH + '/app',
         component: App,
         key: 'app',
         routes: [
             {
-                path: '/app/home',
+                path: ROOTPATH + '/app/home',
                 component: Home,
                 key: 'Home',
                 exact: true,
 
             },
             {
-                path: '/app/test',
+                path: ROOTPATH + '/app/test',
                 component: Test,
                 key: 'Test',
                 exact: true,
 
             },
             {
-                path: '/app/user',
+                path: ROOTPATH + '/app/user',
                 component: User,
                 key: 'User',
                 exact: true,
                 auth: true,
                 routes: [
                     {
-                        path: '/app/user',
+                        path: ROOTPATH + '/app/user',
                         component: UserInfo,
                         key: 'UserInfo',
                         exact: true,
                         auth: true,
                     },
                     {
-                        path: '/app/user/loginlogs',
+                        path: ROOTPATH + '/app/user/loginlogs',
                         component: LoginLogs,
                         key: 'LoginLogs',
                         exact: true,
                         auth: true,
                     },
                     {
-                        path: '/app/user/notification',
+                        path: ROOTPATH + '/app/user/notification',
                         component: Notifications,
                         key: 'Notifications',
                         exact: true,
@@ -89,41 +89,41 @@ const routes = [
             },
             //test
             {
-                path: '/app/productOne',
+                path: ROOTPATH + '/app/productOne',
                 component: ProductOne,
                 key: 'ProductOne',
                 exact: true,
 
             },
             {
-                path: '/app/productTwo',
+                path: ROOTPATH + '/app/productTwo',
                 component: ProductTwo,
                 key: 'ProductTwo',
                 exact: true,
 
             },
             {
-                path: '/app/productThree',
+                path: ROOTPATH + '/app/productThree',
                 component: PruductThree,
                 key: 'PruductThree',
                 // exact: true,
                 routes:[
                     {
-                        path: '/app/productThree',
+                        path: ROOTPATH + '/app/productThree',
                         component: PruductThree1,
                         key: 'PruductThree1',
                         exact: true,
 
                     },
                     {
-                        path: '/app/productThree/productThree2',
+                        path: ROOTPATH + '/app/productThree/productThree2',
                         component: PruductThree2,
                         key: 'PruductThree2',
                         exact: true,
 
                     },
                     {
-                        path: '/app/productThree/productThree3',
+                        path: ROOTPATH + '/app/productThree/productThree3',
                         component: PruductThree3,
                         key: 'PruductThree3',
                         exact: true,
@@ -133,7 +133,7 @@ const routes = [
 
             },
             {
-                path: '/app/menuManage',
+                path: ROOTPATH + '/app/menuManage',
                 component: MenuManage,
                 key: 'MenuManage',
                 exact: true,
@@ -142,7 +142,7 @@ const routes = [
         ]
     },
     {
-        path: '/login',
+        path: ROOTPATH + '/login',
         component: Login,
         key: 'login'
     },

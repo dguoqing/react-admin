@@ -78,7 +78,6 @@ let index = 0;
 
 //socket
 ws.on('connection', (socket) => {
-    console.log(socket)
     socket.on('message', (msg) => {
         console.log(msg);
 

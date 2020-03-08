@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Menu } from 'antd';
 import { Link } from "react-router-dom";
+import BaseConfig from '../../conf'
+const { ROOTPATH } = BaseConfig
 import {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
@@ -21,7 +23,7 @@ interface MenuObj {
 const MenuList: MenuObj[] = [
     {
         title: '首页',
-        linkTo: '/app/home',
+        linkTo: ROOTPATH + '/app/home',
         icon: 'AppstoreOutlined',
     },
     {

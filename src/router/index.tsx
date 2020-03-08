@@ -8,6 +8,8 @@ import * as React  from 'react';
 import { Route, Switch, Redirect} from 'react-router-dom'
 import cookie from 'js-cookie'
 import routes from './conf'
+import BaseConfig from '../conf'
+const { ROOTPATH } = BaseConfig;
 
 
 const { Fragment } = React
@@ -28,9 +30,9 @@ const fmtRoutes = (Routes:Array<any>) => {
                                 state: { from: props.location }
                               }} />
                         }
-                        if(route.path == '/') {
+                        if(route.path == ROOTPATH) {
                             return <Redirect to={{
-                                pathname: "/app/home",
+                                pathname: ROOTPATH + "/app/home",
                                 state: { from: props.location }
                               }} />
                         }
