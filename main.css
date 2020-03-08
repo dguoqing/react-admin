@@ -1,8 +1,79 @@
 footer {
   text-align: center;
-  color: #aeb9d8;
+  color: #000;
+}
+.ant-layout-footer {
+  background: #ffffff;
+  border-top: 1px solid #aeb9d8;
+  text-align: center;
+  color: #000;
 }
 
+.head-badge-tip {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  width: 340px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 10px 0px;
+}
+.head-badge-tip a:hover {
+  color: #000000;
+}
+.head-badge-tip dl {
+  max-height: 300px;
+  min-height: 200px;
+  overflow-y: auto;
+}
+.head-badge-tip dl .dl-box {
+  border-bottom: 1px dashed #cccccc;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+.head-badge-tip dl .dl-box:hover {
+  background-color: #9ed0f1;
+}
+.head-badge-tip dl dt {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  margin-right: 10px;
+}
+.head-badge-tip dl dt img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.head-badge-tip dl dd {
+  height: 50px;
+  text-align: left;
+  float: left;
+  margin-bottom: 0;
+}
+.head-badge-tip dl dd p {
+  margin-bottom: 0;
+  line-height: 24px;
+}
+.head-badge-tip dl dd p:last-child {
+  font-size: 10px;
+  color: #cccccc;
+}
+.head-badge-tip .hbt-bottom {
+  padding: 10px 10px 0;
+}
+.head-badge-tip .hbt-bottom p {
+  line-height: 0;
+}
+
+.ant-layout-header {
+  padding: 0 30px 0 10px !important;
+}
 header {
   width: 100%;
   height: 60px;
@@ -12,6 +83,15 @@ header a {
   color: #aeb9d8;
 }
 header a:hover {
+  color: #ffffff;
+}
+header .halder-trigger {
+  line-height: 68px;
+}
+header .halder-trigger svg {
+  color: #aeb9d8;
+}
+header .halder-trigger svg:hover {
   color: #ffffff;
 }
 header .header-left .header-nav {
@@ -24,23 +104,24 @@ header .header-left .header-nav li {
   line-height: 60px;
   color: #ffffff;
 }
-header .header-right .btn-login {
-  display: inline-block;
-  width: 100px;
+header .header-right li {
+  float: left;
+  color: #aeb9d8;
+  width: 40px;
+  height: 60px;
   text-align: center;
 }
-header .header-right .btn-regisiter {
-  display: inline-block;
-  width: 100px;
-  padding: 0 20px;
-  height: 28px;
-  line-height: 28px;
-  text-align: center;
-  border: 1px solid #357ce1;
-  letter-spacing: 0.29px;
-  border-radius: 4px;
-  -moz-text-align-last: justify;
-       text-align-last: justify;
+header .header-right li:hover {
+  color: #ffffff;
+}
+header .header-right svg {
+  font-size: 20px;
+}
+header .header-right svg:hover {
+  cursor: pointer;
+}
+header .header-right .header-badge {
+  position: relative;
 }
 header .header-right .header-user {
   width: 140px;
@@ -76,20 +157,73 @@ header .header-right .header-user .header-user-hidden {
 header .header-right .header-user .header-user-hidden li {
   height: 60px;
   line-height: 60px;
+  float: none;
 }
 header .header-right .header-user .header-user-hidden li:hover {
   background-color: #001b36;
+}
+
+.slider-menu .ant-menu-item-active a {
+  color: #ffffff !important;
+}
+.slider-menu .ant-menu-item-selected a {
+  color: #ffffff !important;
+}
+.slider-menu .ant-menu-item a {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .main {
   min-width: 1200px;
   height: 100%;
 }
+.main .logo {
+  width: 80%;
+  height: 30px;
+  background: #fff;
+  margin: 15px auto;
+  border-radius: 10px;
+}
+#root {
+  height: 100%;
+  width: 100%;
+}
+#components-layout-demo-custom-trigger .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+#components-layout-demo-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+.site-layout .site-layout-background {
+  background: #fff;
+}
 
 .login {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-clip: content-box;
+}
+.login .login-cont {
   width: 300px;
-  margin: 0 auto;
-  padding: 100px 0 20px;
+  padding: 40px 10px 0;
+  background-color: #999999;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .user-main {
@@ -165,6 +299,12 @@ s,i,em{font-style:normal;text-decoration:none;}
 .font12{ font-size: 12px;}
 .font14{ font-size: 14px;}
 .font16{ font-size: 16px;}
+.white{
+    color: #fff;
+}
+.icon svg{
+    font-size: 18px;
+}
 /*公共部分*/
 /*头部导航开始*/
 /*尾部部导航开始*/
