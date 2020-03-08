@@ -53,6 +53,12 @@ s,i,em{font-style:normal;text-decoration:none;}
 .font12{ font-size: 12px;}
 .font14{ font-size: 14px;}
 .font16{ font-size: 16px;}
+.white{
+    color: #fff;
+}
+.icon svg{
+    font-size: 18px;
+}
 
 /*公共部分*/
 /*头部导航开始*/

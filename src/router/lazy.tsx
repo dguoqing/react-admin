@@ -15,7 +15,7 @@ const Loading = ():object => <h1>loading...</h1>
  * @param Cp Function
  * @param loading Function
  */
-export default (Cp:Function,loading = Loading()):Function => (props:any):object => {
+const lazy = (Cp:Function,loading = Loading()):Function => (props:any):object => {
     return (
         <Fragment>
             <Suspense fallback = {loading}>
@@ -24,4 +24,6 @@ export default (Cp:Function,loading = Loading()):Function => (props:any):object 
         </Fragment>
     )
 }
+
+export default (path:string) => lazy(React.lazy(() => import(`../pages/${path}`)))
 

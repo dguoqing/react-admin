@@ -2,8 +2,9 @@
 import * as React from 'react'
 import { connect, } from 'react-redux';
 import { Layout } from 'antd'
+import moment from 'moment'
 
-import '../assets/style/footer.less'
+import './footer.less'
 const { Footer } = Layout
 
 class Foot extends React.Component<any>{
@@ -12,10 +13,9 @@ class Foot extends React.Component<any>{
     }
     render() {
         console.log(this.props)
-        return <Footer style={{ textAlign: 'center', backgroundColor: '#001529' }}>
+        return <Footer >
             <footer>
-                footer:
-            {this.props.count}
+                React-Admin ©{moment().format('YYYY')} Created by 865470087@qq.com  <span style={{color:'#09f'}}>footer:{this.props.count}</span>
             </footer>
         </Footer>
     }

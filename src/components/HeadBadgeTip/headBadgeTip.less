@@ -1,0 +1,70 @@
+.head-badge-tip {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    width: 340px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px 0px;
+    a {
+        &:hover {
+            color: #000000;
+        }
+    }
+    dl {
+        max-height: 300px;
+        min-height: 200px;
+        overflow-y: auto;
+        .dl-box {
+            border-bottom: 1px dashed #cccccc;
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            &:hover {
+                background-color: rgb(158, 208, 241);
+            }
+        }
+
+        dt {
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 50%;
+            overflow: hidden;
+            float: left;
+            margin-right: 10px;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+
+        dd {
+            height: 50px;
+            text-align: left;
+            float: left;
+            margin-bottom: 0;
+
+            p {
+                margin-bottom: 0;
+                line-height: 24px;
+            }
+
+            p:last-child {
+                font-size: 10px;
+                color: #cccccc;
+            }
+        }
+    }
+
+    .hbt-bottom {
+        padding: 10px 10px 0;
+
+        p {
+            line-height: 0;
+        }
+    }
+
+}

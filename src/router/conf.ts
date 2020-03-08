@@ -7,19 +7,18 @@ import * as React from 'react'
 import BaseConfig from '../conf'
 import Lazy from './lazy'
 const { ROOTPATH } = BaseConfig;
-console.log(BaseConfig)
-const lazy = (path: string) => Lazy(React.lazy(() => import(`../pages/${path}`)))
 
-const Test = lazy("Test")
 
-const Home = Lazy(React.lazy(() => import('../pages/Home')));
-const App = Lazy(React.lazy(() => import('../pages/App')))
-const Login = Lazy(React.lazy(() => import('../pages/Login/index')))
-const User = Lazy(React.lazy(() => import('../pages/User')))
-const LoginLogs = Lazy(React.lazy(() => import('../pages/User/LoginLogs/LoginLogs')))
-const Notifications = Lazy(React.lazy(() => import('../pages/User/Notifications/Notifications')))
-const UserInfo = Lazy(React.lazy(() => import('../pages/User/UserInfo/UserInfo')))
-const NotFound = Lazy(React.lazy(() => import('../pages/NotFound/NotFound')))
+const Test = Lazy("Test")
+
+const Home = Lazy('Home');
+const App = Lazy('App')
+const Login = Lazy('Login/index')
+const User = Lazy('User')
+const LoginLogs = Lazy('User/LoginLogs/LoginLogs')
+const Notifications = Lazy('User/Notifications/Notifications')
+const UserInfo = Lazy('User/UserInfo/UserInfo')
+const NotFound = Lazy('NotFound/NotFound')
 
 
 const routes = [
@@ -35,35 +34,42 @@ const routes = [
         key: 'app',
         routes: [
             {
-                path: '/app',
+                path: '/app/home',
                 component: Home,
                 key: 'Home',
                 exact: true,
 
             },
             {
-                path:'/app/user',
+                path: '/app/test',
+                component: Test,
+                key: 'Test',
+                exact: true,
+
+            },
+            {
+                path: '/app/user',
                 component: User,
                 key: 'User',
                 // exact: true,
                 auth: true,
                 routes: [
                     {
-                        path:'/app/user',
+                        path: '/app/user',
                         component: UserInfo,
                         key: 'UserInfo',
                         exact: true,
                         auth: true,
                     },
                     {
-                        path:'/app/user/loginlogs',
+                        path: '/app/user/loginlogs',
                         component: LoginLogs,
                         key: 'LoginLogs',
                         exact: true,
                         auth: true,
                     },
                     {
-                        path:'/app/user/notification',
+                        path: '/app/user/notification',
                         component: Notifications,
                         key: 'Notifications',
                         exact: true,
@@ -78,6 +84,13 @@ const routes = [
         component: Login,
         key: 'login'
     },
+    // 全局接口失败跳转
+    {
+        path: '*',
+        component: NotFound,
+        key: 'notfound',
+
+    }
 ]
 
 
