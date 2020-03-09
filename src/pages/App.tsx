@@ -6,7 +6,7 @@ import {
     Link
 } from "react-router-dom";
 import { Layout, Menu } from 'antd'
-import { useState, useEffect } from 'react'
+import { useState, useEffect,useCallback } from 'react'
 import {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
@@ -19,6 +19,7 @@ import Footer from '../components/Footer/Footer'
 import Header from '../components/Header/Header'
 import HooksTest from './HooksTest'
 import MenuComp from '../components/Menu/Menu'
+import Tab from '../components/Tab/Tab'
 
 
 import '../assets/style/app.less'
@@ -28,8 +29,13 @@ const { SubMenu } = Menu;
 
 const App: React.FC = (props: any) => {
     const [collapsed, setCollapsed] = useState(false)
+    const [menuItem,setMenuItem] = useState(null)
     const toggle = (): void => {
         setCollapsed(() => !collapsed)
+    }
+    const menuClick = (item:any) => {
+        console.log(item)
+        setMenuItem(item)
     }
     useEffect(() => {
 
@@ -39,11 +45,12 @@ const App: React.FC = (props: any) => {
             <Layout>
                 <Sider trigger={null} collapsible={true} collapsed={collapsed}>
                     <div className="logo" />
-                    <MenuComp />
+                    <MenuComp menuClick={menuClick} />
                 </Sider>
                 <Layout style={{ color: 'red', height: document.documentElement.clientHeight + 'px' }}>
                     <Header collapsed={collapsed} toggle={toggle} />
                     <Content>
+                            <Tab />
                         <div style={{ height: '100%', width: '100%', textAlign: 'center' }}>
                             {props.routes}
                         </div>

@@ -6,9 +6,11 @@
 import { combineReducers } from 'redux'
 
 import test from './test'
+import tabPanes from './tabPanes'
 
 
 
 export default combineReducers({
     test,
+    tabPanes,
 })
