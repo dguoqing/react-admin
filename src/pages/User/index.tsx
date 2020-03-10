@@ -3,7 +3,10 @@ import { connect, } from 'react-redux'
 import { Dispatch } from 'redux'
 import { Link } from 'react-router-dom'
 import { Menu } from 'antd'
+import BaseConfig from '../../conf'
 import './user.less'
+
+const { ROOTPATH } = BaseConfig
 
 
 
@@ -15,17 +18,17 @@ class User extends React.Component<any> {
         this.state = {
             menu: [
                 {
-                    linkTo: '/app/user',
+                    linkTo: ROOTPATH + '/app/user',
                     activeClass: 'active',
                     text: '个人信息'
                 },
                 {
-                    linkTo: '/app/user/loginlogs',
+                    linkTo: ROOTPATH + '/app/user/loginlogs',
                     activeClass: 'active',
                     text: '登录日志'
                 },
                 {
-                    linkTo: '/app/user/notification',
+                    linkTo: ROOTPATH + '/app/user/notification',
                     activeClass: 'active',
                     text: '通知中心'
                 }

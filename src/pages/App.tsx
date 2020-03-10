@@ -6,7 +6,7 @@ import {
     Link
 } from "react-router-dom";
 import { Layout, Menu } from 'antd'
-import { useState, useEffect,useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
@@ -29,11 +29,11 @@ const { SubMenu } = Menu;
 
 const App: React.FC = (props: any) => {
     const [collapsed, setCollapsed] = useState(false)
-    const [menuItem,setMenuItem] = useState(null)
+    const [menuItem, setMenuItem] = useState(null)
     const toggle = (): void => {
         setCollapsed(() => !collapsed)
     }
-    const menuClick = (item:any) => {
+    const menuClick = (item: any) => {
         console.log(item)
         setMenuItem(item)
     }
@@ -42,19 +42,20 @@ const App: React.FC = (props: any) => {
     }, [collapsed])
     return (
         <div className='main' >
-            <Layout>
+            <Layout style={{ height: "100%" }}>
                 <Sider trigger={null} collapsible={true} collapsed={collapsed}>
                     <div className="logo" />
                     <MenuComp menuClick={menuClick} />
                 </Sider>
-                <Layout style={{ color: 'red', height: document.documentElement.clientHeight + 'px' }}>
+                <Layout style={{ backgroundColor: '#eee' }}>
                     <Header collapsed={collapsed} toggle={toggle} />
-                    <Content>
-                            <Tab />
-                        <div style={{ height: '100%', width: '100%', textAlign: 'center' }}>
+                    <Tab />
+                    <div >当前位置：</div>
+                    {/* <Content style={{height:'2000px',backgroundColor:'#000'}}> */}
+                        <div style={{ padding:'10px', textAlign: 'center', backgroundColor:'#ddd'}}>
                             {props.routes}
                         </div>
-                    </Content>
+                    {/* </Content> */}
                     <Footer />
                 </Layout>
 

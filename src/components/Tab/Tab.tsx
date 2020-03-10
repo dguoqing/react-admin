@@ -3,6 +3,7 @@ import { Tabs, Button } from 'antd';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { TabPanStateType, TabPaneType, MenuObj, delPane,IPropsType } from '../../redux/module/tabPanes'
+import './tab.less'
 
 const { TabPane } = Tabs;
 
@@ -80,7 +81,7 @@ class Tab extends React.Component<IProps, IState>{
         console.log(this.state)
         console.log(this.props)
         const { activeKey, panes } = this.props
-        return <div style={{ height: '40px', width: '100%', backgroundColor: '#000' }}>
+        return <div className='tab'>
             <Tabs
                 hideAdd
                 onChange={this.onChange}

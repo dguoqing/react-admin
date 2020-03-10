@@ -79,16 +79,16 @@ export const del = (payload: TabPaneType): DelAction => {
 //dispatch
 export const delPane = (data: TabPaneType): Function => (dispatch: Dispatch<ActionType>): void => {
     console.log(dispatch)
-    setTimeout(() => {
+    // setTimeout(() => {
         dispatch(del(data))
-    }, 500)
+    // }, 500)
 }
 
 export const addPane = (data: TabPaneType): Function => (dispatch: Dispatch<ActionType>): void => {
     console.log(dispatch)
-    setTimeout(() => {
+    // setTimeout(() => {
         dispatch(add(data))
-    }, 500)
+    // }, 500)
 }
 
 

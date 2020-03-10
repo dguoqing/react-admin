@@ -151,6 +151,7 @@ const renderMenu = (menuList: MenuObj[]) => {
 
 const MenuComp = (props: IProps) => {
     const { panes, activeKey }: TabPaneType = useSelector((state: TabPanStateType<TabPaneType>) => ({ ...state.tabPanes }))
+     
     const dispatch = useDispatch()
     const onclick = ({ item, key, keyPath, domEvent }: any) => {
 
@@ -167,6 +168,7 @@ const MenuComp = (props: IProps) => {
         className='slider-menu'
         mode="inline"
         defaultSelectedKeys={['1']}
+        selectedKeys={[activeKey]}
         onClick={onclick}
     >
         {

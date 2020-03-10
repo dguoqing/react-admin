@@ -61,7 +61,7 @@ const routes = [
                 path: ROOTPATH + '/app/user',
                 component: User,
                 key: 'User',
-                exact: true,
+                // exact: true,
                 auth: true,
                 routes: [
                     {

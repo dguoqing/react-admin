@@ -44,7 +44,7 @@ const Head: React.FC<IHeadProps> = (props) => {
         <header className='clearfix'>
             <div className='header-left fl'>
                 {props.collapsed ? <MenuUnfoldOutlined onClick={props.toggle} className='fl icon halder-trigger' /> : <MenuFoldOutlined onClick={props.toggle} className='fl icon halder-trigger' />}
-                <ul className='header-nav fr'>
+                {/* <ul className='header-nav fr'>
                     <li>
                         <Link to="/app/home">Home</Link>
                     </li>
@@ -63,7 +63,7 @@ const Head: React.FC<IHeadProps> = (props) => {
                     <li>
                         <Link to="/111">NotFoundPage</Link>
                     </li>
-                </ul>
+                </ul> */}
             </div>
             <ul className='header-right fr'>
                 <li className='header-badge'><Badge count={count} ><BellOutlined  onClick={controlHeadBadge} /> </Badge>
