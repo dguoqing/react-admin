@@ -153,10 +153,11 @@ header .header-right .header-user:hover .user-touxiang {
 header .header-right .header-user .header-user-hidden {
   position: absolute;
   background-color: #001529;
-  width: 140px;
   display: none;
+  z-index: 1;
 }
 header .header-right .header-user .header-user-hidden li {
+  width: 140px;
   height: 60px;
   line-height: 60px;
   float: none;
