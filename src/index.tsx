@@ -10,7 +10,8 @@ import {
     Link
 } from "react-router-dom";
 import { Provider } from 'react-redux'
-import store from './redux'
+import { PersistGate } from 'redux-persist/lib/integration/react'
+import createStore from './redux'
 import App from './pages/App'
 import Router from './router'
 
@@ -21,16 +22,18 @@ import './assets/style/base.css'
 import './assets/style/index.less'
 import 'antd/dist/antd.css'
 
-
+const {store,persistor}  = createStore()
 
 hot(Router)
 
 const render = (Router: any) => {
     ReactDOM.render(
-        <Provider store={store()}>
-            <HashRouter>
-                <Router />
-            </HashRouter>
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                <HashRouter>
+                    <Router />
+                </HashRouter>
+            </PersistGate>
         </Provider>
         ,
         document.getElementById('root') as HTMLElement)

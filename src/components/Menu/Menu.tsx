@@ -3,7 +3,7 @@ import { Menu } from 'antd';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import BaseConfig from '../../conf'
-import { TabPanStateType, addPane, add, TabPaneType } from '../../redux/module/tabPanes'
+import { TabPanStateType, addPane, add, TabPaneType,MenuObj } from '../../redux/module/tabPanes'
 const { ROOTPATH } = BaseConfig
 import {
     MenuUnfoldOutlined,
@@ -17,13 +17,6 @@ import './menu.less'
 
 const { SubMenu, Item } = Menu
 
-interface MenuObj {
-    title: string,
-    linkTo: string,
-    children?: MenuObj[],
-    icon?: any,
-    key: number
-}
 interface IProps {
     menuClick: (item: MenuObj) => void
 }
@@ -32,43 +25,43 @@ export const MenuList: MenuObj[] = [
         title: '首页',
         linkTo: ROOTPATH + '/app/home',
         icon: 'AppstoreOutlined',
-        key: 1
+        key: '1'
     },
     {
         title: '产品管理',
         icon: <AppstoreOutlined />,
         linkTo: '/app/productOne',
-        key: 2,
+        key: '2',
         children: [
             {
                 title: '产品一',
                 linkTo: '/app/productOne',
-                key: 3,
+                key: '2-1',
             },
             {
                 title: '产品二',
                 linkTo: '/app/productTwo',
-                key: 4,
+                key: '2-2',
             },
             {
                 title: '产品三',
                 linkTo: '',
-                key: 5,
+                key: '2-3',
                 children: [
                     {
                         title: '产品三-1',
                         linkTo: '/app/productThree',
-                        key: 6,
+                        key: '2-3-1',
                     },
                     {
                         title: '产品三-2',
                         linkTo: '/app/productThree/productThree2',
-                        key: 7,
+                        key: '2-3-2',
                     },
                     {
                         title: '产品三-3',
                         linkTo: '/app/productThree/productThree3',
-                        key: 8,
+                        key: '2-3-3',
                     },
                 ]
             },
@@ -77,23 +70,23 @@ export const MenuList: MenuObj[] = [
     {
         title: '系统管理',
         linkTo: '/app/home',
-        key: 9,
+        key: '3-1',
     },
     {
         title: '用户管理',
         linkTo: '/app/user',
-        key: 10,
+        key: '4-1',
     },
     {
         title: '菜单管理',
         linkTo: '/app/menuManage',
-        key: 11,
+        key: '5-1',
     },
 ]
 
-const findItem = (data: MenuObj[], id: number) => {
+const findItem = (data: MenuObj[], id: string) => {
     let result: any = null
-    const range = (cityData: MenuObj[], id: number) => {
+    const range = (cityData: MenuObj[], id: string) => {
         if (!cityData || !cityData.length) return;
         // 定义一个数据栈
         let stack = [];
@@ -154,7 +147,7 @@ const MenuComp = (props: IProps) => {
      
     const dispatch = useDispatch()
     const onclick = ({ item, key, keyPath, domEvent }: any) => {
-
+        console.log(typeof key,key,activeKey,typeof activeKey)
         if (panes.some((v: MenuObj) => v.key == key)) {
             addPane({ panes, activeKey: key })(dispatch)
         } else {

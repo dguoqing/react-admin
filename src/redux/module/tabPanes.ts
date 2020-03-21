@@ -20,7 +20,7 @@ export interface MenuObj {
     linkTo: string,
     children?: MenuObj[],
     icon?: any,
-    key: number
+    key: string
 }
 export interface AddAction {
     type: typeof PANE_ADD,
@@ -55,9 +55,9 @@ const initState = {
         title: '首页',
         linkTo: ROOTPATH + '/app/home',
         icon: 'AppstoreOutlined',
-        key: 1
+        key: '1'
     },],
-    activeKey: '',
+    activeKey: '1',
 }
 
 //创建action

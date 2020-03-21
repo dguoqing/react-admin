@@ -18,19 +18,11 @@ interface IProps extends IPropsType {
 class Tab extends React.Component<IProps, IState>{
     state: IState = {
         panes: [],
-        activeKey: ''
+        activeKey: '1'
     }
-    private newTabIndex: any;
+    
     constructor(props: IProps) {
         super(props)
-        const panes = [
-            { title: 'Tab 1', content: 'Content of Tab Pane 1', key: '1' },
-            { title: 'Tab 2', content: 'Content of Tab Pane 2', key: '2' },
-        ];
-        this.state = {
-            activeKey: panes[0].key,
-            panes,
-        }
     }
     static getDerivedStateFromProps(nextProps: any, prevState: any) {
         console.log(nextProps)
@@ -40,6 +32,7 @@ class Tab extends React.Component<IProps, IState>{
 
     }
     onChange = (activeKey: any) => {
+        console.log('onChange',activeKey,typeof activeKey)
         this.setState({ activeKey });
     };
 
@@ -49,16 +42,14 @@ class Tab extends React.Component<IProps, IState>{
     };
 
     add = (pane: any) => {
-        const { panes } = this.state;
-        const activeKey = `newTab${this.newTabIndex++}`;
-        panes.push({ title: 'New Tab', content: 'New Tab Pane', key: activeKey });
-        this.setState({ panes, activeKey });
+        console.log('addddddd')
+       
     };
 
     remove = (targetKey: any) => {
-        console.log('remove',targetKey)
+        console.log('remove',targetKey,typeof targetKey)
         let { activeKey } = this.state;
-        if(this.props.panes[0].key == targetKey) return
+        if(this.props.panes[0].key === targetKey) return
         let lastIndex: any;
         this.state.panes.forEach((pane, i) => {
             if (pane.key == targetKey) {

@@ -76,7 +76,7 @@ const Head: React.FC<IHeadProps> = (props) => {
                             <Link to="/user">个人中心</Link>
                         </li>
                         <li>
-                            <a onClick={logOut} href=":;">退出</a>
+                            <a onClick={logOut} href="#">退出</a>
                         </li>
                     </ul>
                 </li>
