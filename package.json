@@ -73,7 +73,7 @@
     "@types/react-router-dom": "^5.1.7",
     "antd": "^4.0.0",
     "aphrodite": "^2.4.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.2",
     "core-js": "3",
     "jquery": "^3.4.1",
     "js-cookie": "^2.2.1",
