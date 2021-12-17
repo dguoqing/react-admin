@@ -29,6 +29,8 @@ const PruductThree1 = Lazy('Product/PruductThree/PruductThree1');
 const PruductThree2 = Lazy('Product/PruductThree/PruductThree2');
 const PruductThree3 = Lazy('Product/PruductThree/PruductThree3');
 const MenuManage = Lazy('MenuManage/MenuManage');
+const Responsive = Lazy('Responsive/Responsive');
+const Magic = Lazy('Magic/Magic');
 
 
 const routes = [
@@ -139,6 +141,21 @@ const routes = [
                 exact: true,
 
             },
+            {
+                path: ROOTPATH + '/app/responsive',
+                component: Responsive,
+                key: 'Responsive',
+                exact: true,
+
+            },
+            {
+                path: ROOTPATH + '/app/magic',
+                component: Magic,
+                key: 'Magic',
+                exact: true,
+
+            },
+            
         ]
     },
     {

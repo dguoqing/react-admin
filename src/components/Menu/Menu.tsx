@@ -82,6 +82,16 @@ export const MenuList: MenuObj[] = [
         linkTo: '/app/menuManage',
         key: '5-1',
     },
+    {
+        title: '响应式布局',
+        linkTo: '/app/responsive',
+        key: '6-1',
+    },
+    {
+        title: '动画',
+        linkTo: '/app/magic',
+        key: '7-1',
+    },
 ]
 
 const findItem = (data: MenuObj[], id: string) => {
